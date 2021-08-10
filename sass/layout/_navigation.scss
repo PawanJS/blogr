@@ -1,0 +1,227 @@
+.nav {
+  max-width: 144rem;
+  width: 100%;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  align-items: center;
+  grid-column-gap: 5rem;
+  margin: 0 auto;
+
+  &__menu--container {
+    display: none;
+
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and(max-width:50em) {
+      background-color: hsl(0, 0%, 100%);
+      padding: 3rem;
+      border-radius: 1rem;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 10rem;
+      right: 10%;
+      width: 80%;
+      z-index: 1000;
+
+      &-active {
+        display: flex;
+      }
+    }
+
+    @media only screen and(min-width:50em) {
+      display: flex;
+    }
+  }
+
+  &--menu-icon {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+
+    @media only screen and(min-width:50em) {
+      display: none;
+    }
+  }
+
+  .close {
+    display: none;
+  }
+
+  .nav--menu-icon-active {
+    display: inline-block;
+
+    @media only screen and(min-width:50em) {
+      display: none;
+    }
+  }
+
+  .nav--menu-icon-deactivate {
+    display: none;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &-icon {
+      width: 8rem;
+      height: 4rem;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid hsl(240, 2%, 79%);
+
+    @media only screen and(min-width:50em) {
+      width: auto;
+      flex-direction: row;
+      border: none;
+    }
+
+    &--item {
+      @media only screen and(min-width:50em) {
+        margin-right: 2rem;
+        position: relative;
+      }
+
+      &-btn {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: hsl(0, 0%, 0%);
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        margin: 0 auto;
+        padding: 1.5rem;
+        transition: color 0.3s, border-bottom 0.3s;
+
+        @media only screen and(min-width:50em) {
+          color: hsl(240, 7%, 92%);
+          padding: 0;
+        }
+
+        @media only screen and(min-width:50em) {
+          &:hover {
+            color: hsl(0, 0%, 100%);
+          }
+        }
+      }
+
+      &-icon {
+        margin-left: 0.6rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        transition: transform 0.3s;
+
+        &.desktop {
+          display: none;
+        }
+
+        @media only screen and(min-width:50em) {
+          &.mobile {
+            display: none;
+          }
+
+          &.desktop {
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    &--items {
+      margin-bottom: 2rem;
+      background: hsl(240, 4%, 90%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-radius: 1rem;
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+      transition: opacity 0.3s;
+
+      @media only screen and(min-width:50em) {
+        width: 20rem;
+        align-items: flex-start;
+        background: hsl(0, 0%, 100%);
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 4rem;
+        left: -2rem;
+      }
+
+      &-active & {
+        visibility: visible;
+        opacity: 1;
+        height: 100%;
+
+        @media only screen and(min-width:50em) {
+          height: max-content;
+        }
+      }
+
+      &-active {
+        & .nav__list--item-btn {
+          @media only screen and(min-width:50em) {
+            color: hsl(0, 0%, 100%);
+            border-bottom: 2px solid hsl(0, 0%, 100%);
+          }
+        }
+
+        & .nav__list--item-icon {
+          transform: rotate(180deg);
+        }
+      }
+
+      &-link {
+        font-size: 1.7rem;
+        text-decoration: none;
+        color: hsl(0, 0%, 0%);
+        font-weight: 600;
+
+        @media only screen and(min-width:50em) {
+          font-weight: 300;
+        }
+
+        &:hover {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    a:nth-of-type(1) {
+      color: hsl(0, 0%, 0%);
+      margin: 1rem 0;
+
+      @media only screen and(min-width: 50em) {
+        margin: 0 1rem 0 0;
+        color: hsl(0, 0%, 100%);
+      }
+    }
+
+    @media only screen and(min-width: 50em) {
+      flex-direction: row;
+    }
+  }
+}

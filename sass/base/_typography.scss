@@ -1,0 +1,11 @@
+body {
+  font-family: 'Overpass', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.9;
+}
+
+.heading-1 {
+  font-size: clamp(3.5rem, 5vw, 6rem);
+  font-weight: 600;
+}
