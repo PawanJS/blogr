@@ -10,7 +10,7 @@
     max-width: 144rem;
     width: 100%;
     padding: 5rem 3rem;
-    margin: 0 auto;
+    margin: 5rem auto;
     display: grid;
     place-items: center;
 
@@ -49,5 +49,16 @@
     color: hsl(0, 0%, 100%);
     border-top-right-radius: 10rem;
     border-bottom-left-radius: 10rem;
+    position: relative;
+
+    img {
+      @media only screen and(min-width:60em) {
+        position: absolute;
+        width: 50rem;
+        height: auto;
+        top: -10rem;
+        left: 0;
+      }
+    }
   }
 }
