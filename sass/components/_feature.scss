@@ -1,0 +1,53 @@
+.feature {
+  img {
+    max-width: 60rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__wrapper {
+    max-width: 144rem;
+    width: 100%;
+    padding: 5rem 3rem;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+
+    @media only screen and(min-width:60em) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 8rem;
+    }
+  }
+
+  &__text-box {
+    max-width: 50rem;
+    width: 100%;
+    text-align: center;
+
+    @media only screen and(min-width:60em) {
+      text-align: left;
+    }
+  }
+
+  .align-left {
+    @media only screen and(min-width:60em) {
+      grid-column: 2 / 3;
+    }
+  }
+
+  .align-right {
+    @media only screen and(min-width:60em) {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+  }
+
+  &__dark-bg {
+    background: url('../../images/bg-pattern-circles.svg') hsl(237, 17%, 21%)
+      no-repeat;
+    background-position: left;
+    color: hsl(0, 0%, 100%);
+    border-top-right-radius: 10rem;
+    border-bottom-left-radius: 10rem;
+  }
+}
