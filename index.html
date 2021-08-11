@@ -17,6 +17,8 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
 
     <link rel="stylesheet" href="css/style.css" />
@@ -28,6 +30,7 @@
     <header class="header">
       <nav class="nav">
         <a href="./" class="nav__logo">
+          <span class="scr-reader">Navigation logo</span>
           <svg class="nav__logo-icon">
             <use href="images/sprite.svg#logo"></use>
           </svg>
@@ -92,6 +95,7 @@
           </div>
         </div>
         <button class="btn--menu js-menu-btn">
+          <span class="scr-reader">Menu button</span>
           <svg class="nav--menu-icon js-menu-open">
             <use href="images/sprite.svg#icon-hamburger"></use>
           </svg>
@@ -198,6 +202,7 @@
     <footer class="footer">
       <div class="footer--wrapper">
         <a href="./" class="footer__logo">
+          <span class="scr-reader">Footer logo</span>
           <svg class="footer__logo-icon">
             <use href="images/sprite.svg#logo"></use>
           </svg>
